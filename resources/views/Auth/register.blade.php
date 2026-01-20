@@ -21,7 +21,6 @@
 </head>
 
 <body class="d-flex align-items-center justify-content-center vh-100">
-
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-md-6 col-lg-5">
@@ -32,10 +31,8 @@
           <h2 class="fw-bold">Create your account</h2>
           <p class="text-muted">Join Business Nexus to connect with partners</p>
         </div>
-
         <div class="card shadow-sm">
           <div class="card-body p-4">
-
             <!-- Error Alert -->
             <div id="errorBox" class="alert alert-danger d-none">
               <i class="fas fa-exclamation-circle me-2"></i>
@@ -62,7 +59,6 @@
                 <!-- hidden input that will be updated with JS -->
                 <input type="hidden" id="role" name="role" value="entrepreneur">
               </div>
-
               <!-- Full Name -->
               <div class="mb-3">
                 <label class="form-label">Full Name</label>
@@ -71,7 +67,6 @@
                   <input type="text" id="name" name="name" class="form-control" required>
                 </div>
               </div>
-
               <!-- Email -->
               <div class="mb-3">
                 <label class="form-label">Email address</label>
@@ -80,7 +75,6 @@
                   <input type="email" id="email" name="email" class="form-control" required>
                 </div>
               </div>
-
               <!-- Password -->
               <div class="mb-3">
                 <label class="form-label">Password</label>
@@ -89,7 +83,6 @@
                   <input type="password" id="password" name="password" class="form-control" required>
                 </div>
               </div>
-
               <!-- Terms -->
               <div class="form-check mb-3">
                 <input class="form-check-input" type="checkbox" id="terms" required>
@@ -97,39 +90,37 @@
                   I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
                 </label>
               </div>
-
               <!-- Submit -->
               <button type="submit" class="btn btn-primary w-100">Create account</button>
             </form>
-
             <div class="text-center mt-3">
               <small class="text-muted">Already have an account? <a href="{{ url('/') }}">Sign in</a></small>
             </div>
-
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  <script>
-    const entrepreneurBtn = document.getElementById("entrepreneurBtn");
-    const investorBtn = document.getElementById("investorBtn");
-    const roleInput = document.getElementById("role");
+  <!--user registed form submit-->
+<script>
+const entrepreneurBtn = document.getElementById("entrepreneurBtn");
+const investorBtn = document.getElementById("investorBtn");
+const roleInput = document.getElementById("role");
 
-    entrepreneurBtn.addEventListener("click", () => {
-      entrepreneurBtn.classList.add("active");
-      investorBtn.classList.remove("active");
-      roleInput.value = "entrepreneur";
-    });
+entrepreneurBtn.addEventListener("click", () => {
+    entrepreneurBtn.classList.add("active");
+    investorBtn.classList.remove("active");
+    roleInput.value = "entrepreneur";
+});
 
-    investorBtn.addEventListener("click", () => {
-      investorBtn.classList.add("active");
-      entrepreneurBtn.classList.remove("active");
-      roleInput.value = "investor";
-    });
+investorBtn.addEventListener("click", () => {
+    investorBtn.classList.add("active");
+    entrepreneurBtn.classList.remove("active");
+    roleInput.value = "investor";
+});
 
-    var registerform = document.querySelector('#registerForm');
+var registerform = document.querySelector('#registerForm');
 registerform.onsubmit = function (e) {
     e.preventDefault();
 
@@ -160,9 +151,11 @@ registerform.onsubmit = function (e) {
                 // Success alert
                 var successMsg = document.getElementById("successMsg");
                 var successBox = document.getElementById("successBox");
+                //show success message
+                successMsg.innerText = response.message;
+                successBox.classList.remove("d-none");
+
                 setTimeout(() => {
-                    successMsg.innerText = response.message;
-                    successBox.classList.remove("d-none");
                     window.location.href = '/';
                 }, 2000);
             } else {
@@ -170,7 +163,7 @@ registerform.onsubmit = function (e) {
                 var errorMsg = document.getElementById("errorMsg");
                 var errorBox = document.getElementById("errorBox");
 
-                errorMsg.innerText = 'UserName and Password Incorrect' || JSON.stringify(response.errors);
+                errorMsg.innerText = 'UserName and Email Already Exist' || JSON.stringify(response.errors);
                 errorBox.classList.remove("d-none");
             }
         })
@@ -184,12 +177,12 @@ registerform.onsubmit = function (e) {
             errorBox.classList.remove("d-none");
         });
 }
-
-  </script>
-
+</script>
+<!--end user submitted form -->
+<!-- Scripts file in public /assets /js /Auth.js-->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="{{ asset('assets/js/jquery.main.js') }}"> </script>
-  <script src="{{ asset('assets/js/Auth.js') }}"> </script>
+  <!--<script src="{{ asset('assets/js/Auth.js') }}"> </script>-->
 </body>
 
 </html>

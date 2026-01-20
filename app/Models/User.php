@@ -3,6 +3,7 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Faker\Provider\ar_EG\Payment;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -55,11 +56,15 @@ class User extends Authenticatable
     }
 
      public function inv_startup(){
-        return $this->hasMany(investor_startup::class);
+        return $this->hasMany(investor_startup::class,'user_id');
     }
 
      public function startup(){
-        return $this->hasMany(startup::class);
+        return $this->hasMany(startup::class,'user_id');
+     }
+
+        public function payment(){
+        return $this->hasOne(Payment::class,'user_id');
      }
 
 }

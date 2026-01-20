@@ -125,3 +125,208 @@
       }
     }
 
+ /*-------startup--------------*/
+ 
+        body {
+            background: #F7F9FB;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .filter-box {
+            background: #fff;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .investor-card {
+            background: white;
+            border-radius: 14px;
+            padding: 22px;
+            border: 1px solid #e5e7eb;
+            transition: .2s;
+        }
+
+        .investor-card:hover {
+            box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.07);
+            transform: translateY(-3px);
+        }
+
+        .badge-soft {
+            background: #e8efff;
+            color: #3856d5;
+            font-size: 12px;
+            border-radius: 6px;
+            padding: 4px 8px;
+            font-weight: 500;
+        }
+
+        .profile-img {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+/*---------investor=========*/
+        body {
+            background: #F7F9FB;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .filter-box {
+            background: #fff;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .investor-card {
+            background: white;
+            border-radius: 14px;
+            padding: 22px;
+            border: 1px solid #e5e7eb;
+            transition: .2s;
+            overflow:hidden ;
+        }
+
+        .investor-card:hover {
+            box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.07);
+            transform: translateY(-3px);
+        }
+
+        .badge-soft {
+            background: #e8efff;
+            color: #3856d5;
+            font-size: 12px;
+            border-radius: 6px;
+            padding: 4px 8px;
+            font-weight: 500;
+        }
+
+        .profile-img {
+            width: 60px;
+            height: 55px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+  /* dashboard startup==========*/
+ 
+        .investor-card {
+            border: 1px solid #ebebeb;
+            border-radius: 10px;
+            transition: .3s;
+            background: white;
+            margin: 10px;
+        }
+
+        .investor-card:hover {
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08);
+            transform: translateY(-3px);
+        }
+
+        .investor-img {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+        }
+
+        .inv-badge {
+            font-size: 11px;
+            padding: 4px 8px;
+        }
+/*===========cheat-----------------------------------------------------------------------
+
+        /* Chat Layout */
+        .chat-container {
+            height: 100vh;
+            border-radius: 6px;
+            overflow: hidden;
+            border: 1px solid #ddd;
+        }
+
+        .chat-sidebar {
+            width: 30%;
+            border-right: 1px solid #ddd;
+            overflow-y: auto;
+        }
+
+        .chat-main {
+            width: 70%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Messages */
+        .message-row {
+            display: flex;
+            margin-bottom: 12px;
+        }
+
+        .message-row.sent {
+            justify-content: flex-end;
+        }
+
+        .message-box {
+            max-width: 60%;
+            padding: 10px 14px;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+
+        .message-row.sent .message-box {
+            background: #0d6efd;
+            color: #fff;
+            border-bottom-right-radius: 0;
+        }
+
+        .message-row.receive .message-box {
+            background: #f1f1f1;
+            color: #333;
+            border-bottom-left-radius: 0;
+        }
+
+        /* Scroll */
+        .chat-messages {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            background: #f8f9fa;
+        }
+
+        .text-online{
+          color:green;
+        }
+
+        
+
+        .distance-user-message{
+          margin-left:10px;
+        }
+
+.user-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.1s ease;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* HOVER EFFECT */
+.user-link:hover {
+    background-color: #f1f5f9;
+}
+
+/* CLICK EFFECT */
+.user-link:active {
+    background-color: #e5e7eb;
+    transform: scale(0.98);
+}
+
+/* ACTIVE (SELECTED USER) */
+.user-link.active {
+    background-color: #e0e7ff;
+    border-left: 4px solid #0d6efd;
+}
+
+

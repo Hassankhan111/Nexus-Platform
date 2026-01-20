@@ -1,181 +1,160 @@
 @extends('layout.main')
 
 @section('main-content')
+  <style>
+    .settings-nav .btn.active {
+      background-color: #e9f5ff;
+      color: #0d6efd;
+    }
 
-<style>
-  body {
-    background-color: #f4f6f9;
-  }
+    .avatar-lg {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
 
-  .profile-card {
-    background: #fff;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-    transition: all 0.3s ease-in-out;
-  }
+    .card {
+      border-radius: 15px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    }
 
-  .profile-card:hover {
-    transform: translateY(-3px);
-  }
+    .form-section {
+      margin-bottom: 2rem;
+    }
 
-  .profile-header {
-    background: linear-gradient(135deg, #007bff, #6610f2);
-    color: #fff;
-    padding: 2rem;
-    text-align: center;
-    position: relative;
-  }
+    .section-title {
+      font-weight: 600;
+      font-size: 18px;
+      color: #0d6efd;
+      margin-bottom: 15px;
+    }
+  </style>
 
-  .profile-header img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    border: 4px solid #fff;
-    object-fit: cover;
-    position: absolute;
-    bottom: -60px;
-    left: 50%;
-    transform: translateX(-50%);
-  }
+  <div class="container py-5">
+    <h1 class="mb-2 fw-semibold" style="font-size:30px;">Add Portfolio</h1>
+    <p class="text-muted mb-4">Manage your account preferences and settings</p>
 
-  .profile-body {
-    padding: 4rem 2rem 2rem;
-  }
+    <div class="row">
+      <div class="col-lg-12">
 
-  .data-label {
-    color: #6c757d;
-    font-weight: 500;
-    font-size: 0.9rem;
-  }
+        <!-- 1️⃣ USER INFORMATION -->
+        <div class="card mb-4">
+          <div class="card-header bg-light">
+            <h5 class="mb-0 fw-semibold">User Information</h5>
+          </div>
 
-  .data-value {
-    font-weight: 600;
-    color: #212529;
-    font-size: 1rem;
-  }
 
-  .summary-card {
-    background: #f8f9fa;
-    border-left: 4px solid #0d6efd;
-    border-radius: 10px;
-    padding: 1rem;
-  }
+          <div class="card-body">
+            <div class="d-flex align-items-center mb-4">
+              <!-- Profile image -->
+              <div class="d-flex align-items-center mb-4">
+                <!-- Profile image -->
+                <img id="updateimage" src="https://via.placeholder.com/80" alt="Avatar"
+                  class="rounded-circle border shadow avatar-lg me-3" style="width:80px; height:80px; object-fit:cover;">
 
-  .badge-custom {
-    background-color: #e7f1ff;
-    color: #0d6efd;
-    font-weight: 600;
-  }
+                <div>
+                  <!-- Change Photo button linked to file input -->
+                  <label for="ImageInput" class="btn btn-outline-primary btn-sm mb-0">
+                    <i class="bi bi-upload"></i> Add Photo
+                  </label>
+                  <input type="file" id="ImageInput" name="image" accept="image/*" class="d-none">
 
-  .btn-action {
-    border-radius: 50px;
-    font-weight: 500;
-    padding: 0.5rem 1.2rem;
-  }
-</style>
-
-<div class="container py-5">
-  <div class="row justify-content-center">
-    <div class="col-lg-8">
-      <div class="profile-card">
-
-        <!-- Profile Header -->
-        <div class="profile-header">
-          <h3 class="fw-bold mb-0" id="inv_name">Khan Mohammad</h3>
-          <p class="text-light mb-1" id="company">Home Work Ltd.</p>
-          <span class="badge badge-custom" id="inv_industry">FinTech</span>
-          <img id="inv_image" src="https://via.placeholder.com/150" alt="Investor Image">
-        </div>
-
-        <!-- Profile Body -->
-        <div class="profile-body">
-
-          <div class="row mb-4">
-            <div class="col-md-6">
-              <p class="data-label mb-1">📍 Location</p>
-              <p class="data-value" id="inv_location">Peshawar, Pakistan</p>
+                  <p class="text-muted small mt-2">JPG, GIF or PNG. Max size of 800K</p>
+                </div>
+              </div>
             </div>
-            <div class="col-md-6">
-              <p class="data-label mb-1">🏢 Company</p>
-              <p class="data-value" id="company_name">Home Work Ltd.</p>
+
+
+              <div class="row mb-3">
+                <div class="col-md-6">
+                  <label class="form-label">Full Name</label>
+                  <input type="text" class="form-control" id="fullName" placeholder="Enter your full name" disabled>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Email</label>
+                  <input type="email" class="form-control" id="email" placeholder="Enter your email" disabled>
+                </div>
+              </div>
+
+              <div class="row mb-3">
+                <div class="col-md-12">
+                  <label class="form-label">Role</label>
+                  <input type="text" class="form-control" id="role" value="enter role" disabled>
+                </div>
+              </div>
             </div>
           </div>
 
-          <div class="row mb-4">
-            <div class="col-md-6">
-              <p class="data-label mb-1">👥 Team Size</p>
-              <p class="data-value" id="inv_teamsize">12</p>
-            </div>
-            <div class="col-md-6">
-              <p class="data-label mb-1">💰 Funding Needed</p>
-              <p class="data-value" id="funding_ned">$150,000</p>
-            </div>
-          </div>
 
-          <div class="row mb-4">
-            <div class="col-md-6">
-              <p class="data-label mb-1">📅 Founded Year</p>
-              <p class="data-value" id="year">2021</p>
-            </div>
-            <div class="col-md-6">
-              <p class="data-label mb-1">📊 Industry</p>
-              <p class="data-value" id="industry">Technology</p>
-            </div>
-          </div>
 
-          <div class="summary-card mb-4">
-            <h6 class="fw-bold mb-2">Investment Pitch Summary</h6>
-            <p class="text-muted mb-0" id="pitch_summ">
-              We are building a data-driven AI platform connecting startups with investors for smart funding opportunities.
-            </p>
-          </div>
+          <!-- 3️⃣ STARTUP INFORMATION -->
+          <div class="card mb-4">
+            <div class="card-header bg-light">
+              <h5 class="mb-0 fw-semibold">Startup Information</h5>
+            </div>
 
-          <div class="text-center">
-            <button class="btn btn-primary btn-action me-2"><i class="bi bi-pencil-square"></i> Edit</button>
-            <button class="btn btn-outline-secondary btn-action"><i class="bi bi-arrow-left-circle"></i> Back</button>
+            <div class="card-body">
+              <form id="addinvestor">
+                <div class="row mb-3">
+                  <div class="mb-3">
+                    <label class="form-label">Startup Name</label>
+                    <input type="text" class="form-control" id="investor_name" rows="4"
+                      placeholder="Enter your startup name">
+                  </div>
+
+                  <div class="col-md-6">
+                    <label class="form-label">Funding Need</label>
+                    <input type="number" class="form-control" id="funding_need"
+                      placeholder="Enter your funding need e,g 4000 name">
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">Company Name</label>
+                    <input type="text" class="form-control" id="investor_company" placeholder="e.g., FinTech, E-commerce">
+                  </div>
+                </div>
+
+                <div class="row mb-3">
+                  <div class="col-md-6">
+                    <label class="form-label">Loation</label>
+                    <input type="text" class="form-control" id="investor_location" placeholder="e.g. islmbad ">
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">Investment Company</label>
+                    <input type="text" class="form-control" id="investor_investmentcompany" placeholder="Company or partner name">
+                  </div>
+                </div>
+
+                <div class="row mb-3">
+                  <div class="col-md-6">
+                    <label class="form-label">Founded Years ($)</label>
+                    <input type="number" class="form-control" id="investor_fundingyear" placeholder="e.g. 2012">
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">Time Size</label>
+                    <input type="number" class="form-control" id="investor_timesize" placeholder="Time Size e.g. 1,2,3">
+                  </div>
+                </div>
+
+                <div class="mb-3">
+                  <label class="form-label">Startup Summary</label>
+                  <textarea class="form-control" id="investor_pitchsummary" rows="4"
+                    placeholder="Describe your startup idea, mission, and vision..."></textarea>
+                </div>
+
+                <div class="text-end">
+                  <button type="reset" class="btn btn-outline-secondary">Cancel</button>
+                  <button type="submit" class="btn btn-primary">Save Changes</button>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
+@endsection
 
 @push('scripts')
-<script>
-document.addEventListener("DOMContentLoaded", async function() {
-  const token = localStorage.getItem("api_token");
-  if (!token) {
-    window.location.href = "/";
-    return;
-  }
-
-  try {
-    const response = await fetch("/api/investor/show", {
-      method: "GET",
-      headers: { "Authorization": "Bearer " + token }
-    });
-    const data = await response.json();
-
-    if (data.status && data.investor) {
-      const inv = data.investor;
-      document.getElementById("inv_name").innerText = inv.inv_name || '—';
-      document.getElementById("company").innerText = inv.company || '—';
-      document.getElementById("inv_location").innerText = inv.inv_location || '—';
-      document.getElementById("industry").innerText = inv.inv_industry || '—';
-      document.getElementById("year").innerText = inv.year || '—';
-      document.getElementById("inv_teamsize").innerText = inv.inv_teamsize || '—';
-      document.getElementById("funding_ned").innerText = inv.funding_ned ? `$${inv.funding_ned}` : '—';
-      document.getElementById("pitch_summ").innerText = inv.pitch_summ || '';
-      document.getElementById("inv_image").src = inv.inv_image
-        ? `/storage/${inv.inv_image}`
-        : "https://via.placeholder.com/150";
-    }
-  } catch (error) {
-    console.error("Error loading investor:", error);
-  }
-});
-</script>
+    <!-- Main page logic for investor-->
+   <script src="{{ asset('assets/js/investor.js') }}"></script>
 @endpush
-
-@endsection

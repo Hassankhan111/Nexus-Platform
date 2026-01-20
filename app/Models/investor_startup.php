@@ -20,6 +20,6 @@ class investor_startup extends Model
     ];
     public function user()
     {
-        return $this->belongsTo(user::class);
+        return $this->belongsTo(user::class,'investors_id');
     }
 }

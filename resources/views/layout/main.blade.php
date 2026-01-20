@@ -1,3 +1,5 @@
+<html>
+
 @include('layout.header')
 
   <!-- Main Layout -->
@@ -13,10 +15,27 @@
     </div>
   </div>
 
-  @push('scripts')
+  
 
-  @endpush
+ <!-- Bootstrap bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<!--boostrap js -->
+<script src="{{ asset('assets/js/javascript/bootstrap.js') }}"></script>
+<!-- jQuery -->
+<script src="{{ asset('assets/js/jquery.main.js') }}"></script>
 
-</body>
+<!-- Auth related (profile, token checks) -->
+<script src="{{ asset('assets/js/Auth.js') }}"></script>
 
+<!-- Layout helpers (sidebar toggle, DOM manipulations) -->
+<script src="{{ asset('assets/js/layout.js') }}"></script>
+
+
+<!-- Main page logic for pyment-->
+ <script src="{{ asset('assets/js/billing.js') }}"></script>
+
+  <!-- this the stack script code extended in every page --->
+  @stack('scripts')
+
+ </body>
 </html>

@@ -10,7 +10,6 @@
 </head>
 
 <body class="bg-light">
-
   <div class="d-flex vh-100 justify-content-center align-items-center">
     <div class="card shadow p-4" style="width: 400px;">
 
@@ -21,20 +20,19 @@
         <p class="text-muted small">Connect with investors and entrepreneurs</p>
       </div>
 
- <!-- Error Alert -->
-            <div id="errorBox" class="alert alert-danger d-none">
-              <i class="fas fa-exclamation-circle me-2"></i>
-              <span id="errorMsg"> </span>
-            </div>
+      <!-- Error Alert and success alert-->
+      <div id="errorBox" class="alert alert-danger d-none">
+        <i class="fas fa-exclamation-circle me-2"></i>
+        <span id="errorMsg"> </span>
+      </div>
 
-            <div id="successBox" class="alert alert-danger d-none">
-              <i class="fas fa-exclamation-circle me-2"></i>
-              <span id="successMsg"> </span>
-            </div>
+      <div id="successBox" class="alert alert-danger d-none">
+        <i class="fas fa-exclamation-circle me-2"></i>
+        <span id="successMsg"> </span>
+      </div>
 
       <!-- Login Form -->
       <form class="loginform">
-
         <div class="mb-3">
           <label class="form-label fw-semibold">I am a</label>
           <div class="btn-group w-100" role="group">
@@ -48,17 +46,14 @@
           <!-- hidden input that will be updated with JS -->
           <input type="hidden" id="role" name="role" value="entrepreneur">
         </div>
-        
         <div class="mb-3">
           <label for="email" class="form-label">Email address</label>
           <input type="email" id="loginemail" name="email" class="form-control" placeholder="Enter email">
         </div>
-
         <div class="mb-3">
           <label for="password" class="form-label">Password</label>
           <input type="password" id="loginpassword" name="password" class="form-control" placeholder="Password">
         </div>
-
         <div class="d-flex justify-content-between align-items-center mb-3">
           <div class="form-check">
             <input class="form-check-input" type="checkbox" id="remember">
@@ -66,12 +61,10 @@
           </div>
           <a href="#" class="small">Forgot your password?</a>
         </div>
-
         <button type="submit" class="btn btn-primary w-100 mb-3">
           <i class="bi bi-box-arrow-in-right"></i> Sign in
         </button>
       </form>
-
       <!-- Demo Accounts -->
       <div class="text-center mb-3">
         <small class="text-muted">Demo Accounts</small>
@@ -80,7 +73,6 @@
           <button class="btn btn-outline-secondary w-50">Investor Demo</button>
         </div>
       </div>
-
       <!-- Signup -->
       <div class="text-center">
         <small>
@@ -90,7 +82,7 @@
     </div>
   </div>
 
-    <script>
+  <script>
     const entrepreneurBtn = document.getElementById("entrepreneurBtn");
     const investorBtn = document.getElementById("investorBtn");
     const roleInput = document.getElementById("role");
@@ -108,6 +100,7 @@
     });
   </script>
 
+ <!--user login as investor and entreprenure in javascript in public assets/js/Auth.js -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="{{ asset('assets/js/jquery.main.js') }}"> </script>
   <script src="{{ asset('assets/js/Auth.js') }}"> </script>

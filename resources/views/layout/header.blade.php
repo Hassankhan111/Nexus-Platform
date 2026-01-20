@@ -5,14 +5,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>@yield('title') | NexusDashboard</title>
+    <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
   <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
   
+
 </head>
+
 <body>
- 
+
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
     <div class="container-fluid">
@@ -47,9 +51,10 @@
             <a id="messagess" class="nav-link" href="#"><i class="bi bi-chat-left-text me-1"></i> Messages</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#"><i class="bi bi-bell me-1"></i> Notifications</a>
+            <a id="headernotificationbtn" class="nav-link" href="#"><i class="bi bi-bell me-1"></i> Notifications</a>
           </li>
-          <li class="nav-item"><a id="profilee" class="nav-link" href=""><i class="bi bi-person me-2"></i> Profile</a>
+          <li class="nav-item"><a id="profilee" class="nav-link" href=""><i
+                class="bi bi-person me-2"></i> Profile</a>
 
           </li>
           <li class="nav-item">
@@ -67,19 +72,9 @@
     </div>
   </nav>
 
- <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="{{ asset('assets/js/jquery.main.js') }}"></script>
-  <script src="{{ asset('assets/js/Auth.js') }}"></script>
-    <script src="{{ asset('assets/js/main.js') }}"></script>
-
-  
-
-  <!-- this the stack script code extended in every page --->
-  @stack('scripts')
-
 </body>
 
 </html>
 </body>
+
 </html>
