@@ -51,4 +51,31 @@ It provides features for profile management, startup presentation, and secure co
 ---
 
 ## 📁 Project Structure
+# 1. Clone the repository
+git clone https://github.com/Hassankhan111/Nexus-Platform.git
+cd Nexus-Platform
 
+# 2. Install PHP dependencies
+composer install
+
+# 3. Create environment file
+copy .env.example to .env
+
+# 4. Generate application key
+php artisan key:generate
+
+# 5. Configure database in .env file
+# (Set your DB_DATABASE, DB_USERNAME, DB_PASSWORD)
+
+# 6. Run database migrations
+php artisan migrate --seed
+
+# 7. Install frontend dependencies
+npm install
+npm run dev
+
+# 8. Create storage link
+php artisan storage:link
+
+# 9. Start the development server
+php artisan serve
